@@ -20,7 +20,7 @@ file.
 		cmd = cmd.exe //c "\"webstorm\" diff \"$LOCAL\" \"$REMOTE\""
 
 
-### Setting Up NPM, Bower and Git behind a corporate proxy
+### Setting Up NPM, Bower, Git and Python behind a corporate proxy
 This is a real pain, and I can't say how many times I've had to
 look this up on stackoverflow. So, here it is for posterity.
 
@@ -58,3 +58,11 @@ In your %userprofile%\.npmrc file:
 	proxy=http://{{username}}:{{proxy pw}}@{{mycorpproxy}}.com:80/
 	https-proxy=http://{{username}}:{{proxy pw}}@{{mycorpproxy}}.com:443/
 
+####Python
+In your %userprofile%\AppData\Roaming\pip\pip.ini file, you'll need
+to add the following. You will need to create this file and its 
+parent folder if they don't already exist.
+
+	[global]
+    	trusted-host = pypi.python.org
+    	proxy = http://{{username}}:{{proxy pw}}@{{mycorpproxy}}.com:80
