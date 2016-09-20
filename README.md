@@ -3,6 +3,17 @@ I'm creating this repo as a dumping ground for all the useful
 tips I've found and don't want to lose track of. These have all
 saved me a lot of time and grief.
 
+###Finding All jQuery Events On an Element
+
+Event-based views are a real pain when you don't know where your events
+are coming from. Here's how to see what jQuery events are triggering
+on any DOM element.
+
+	var domElem = $('body')[0];
+	$._data(domElem, 'events');
+	//domElem must be a true DOM element, not a jQuery object
+
+
 ### Running WebStorm as your Git Diff/Merge Tool
 
 WebStorm's diff tool is amazing, so using it for Git is a
