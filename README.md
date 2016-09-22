@@ -30,6 +30,24 @@ file.
 	[difftool "webstorm"]
 		cmd = cmd.exe //c "\"webstorm\" diff \"$LOCAL\" \"$REMOTE\""
 
+### Targeting Older Version of NodeJS with ESLint
+
+Many services (AWS, for instance) run older versions of Node, but often you don't
+want to cripple your local environment by running an outdated distribution. To keep
+yourself from delivering code to the service that isn't supported, use the following
+structure in your ESLint settings file.
+
+	{
+      “plugins”: [“node”],
+      “extends”: [“eslint:recommended”, “plugin:node/recommended”],
+      “env”: {
+        “node”: true
+      },
+      “rules”: {
+        “node/no-unsupported-features”: [2, {“version”: 4}]
+      }
+    }
+
 
 ### Setting Up NPM, Bower, Git and Python behind a corporate proxy
 This is a real pain, and I can't say how many times I've had to
