@@ -59,7 +59,7 @@ you can do to lessen the pain.
 Download the VS 2015 Power Tools here:
 https://visualstudiogallery.msdn.microsoft.com/898a828a-af00-42c6-bbb2-530dc7b8f2e1
 
-Run the following command:
+From a directory **inside your VS project**, run the following command:
 
 	tfpt unshelve /migrate /source:"$/ProjectName/Branch" /target:"$/ProjectName/Targetbranch" "My Shelveset Name"
 
