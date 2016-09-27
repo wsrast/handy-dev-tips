@@ -49,6 +49,27 @@ structure in your ESLint settings file.
     }
 
 
+##TFS
+
+TFS is a bad source control system, compared to Git or SVN. There are a few things
+you can do to lessen the pain.
+
+###Move Shelveset from Branch to Branch
+
+Download the VS 2015 Power Tools here:
+https://visualstudiogallery.msdn.microsoft.com/898a828a-af00-42c6-bbb2-530dc7b8f2e1
+
+Run the following command:
+
+	tfpt unshelve /migrate /source:"$/ProjectName/Branch" /target:"$/ProjectName/Targetbranch" "My Shelveset Name"
+
+You'll get a couple of straightforward prompt windows. Resolve any conflicts
+and you'll end up back at the command prompt. You're done.
+
+
+##Local Environment Setup
+
+
 ### Setting Up NPM, Bower, Git and Python behind a corporate proxy
 This is a real pain, and I can't say how many times I've had to
 look this up on stackoverflow. So, here it is for posterity.
